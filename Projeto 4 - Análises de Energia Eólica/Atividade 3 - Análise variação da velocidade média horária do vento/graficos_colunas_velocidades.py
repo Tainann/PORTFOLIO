@@ -14,7 +14,6 @@ plt.bar(x, y1, color='green', alpha=0.8)
 # Define os rótulos do eixo x
 plt.xticks(x)
 
-
 plt.xlabel('Horas do dia')
 plt.ylabel('Velocidade do vento (m/s)')
 plt.grid(axis='y', color='black', linestyle = "--", linewidth = 0.5)
