@@ -1,3 +1,5 @@
+# ESSE CÓDIGO USA A BIBLIOTECA DEAP
+
 import random
 import numpy
 from deap import base

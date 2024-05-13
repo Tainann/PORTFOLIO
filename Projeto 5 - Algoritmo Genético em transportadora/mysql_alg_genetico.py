@@ -1,3 +1,7 @@
+# ESSE CÓDIGO USA MYSQL
+
+
+
 from random import random
 import matplotlib.pyplot as plt
 import pymysql
@@ -157,7 +161,7 @@ if __name__ == '__main__':
     lista_produtos = []
     # Fazendo conexao com o MySQL Workbench do meu notebook
     # Gera um banco de produtos levando em conta a quantidade de cada um
-    conexao = pymysql.connect(host='localhost', user='root', passwd='Gallifrey4599', db='produtos')
+    conexao = pymysql.connect(host='xxxxx', user='xxxxx', passwd='xxxxxx', db='produtos')
     cursor = conexao.cursor()
     cursor.execute('select nome, espaco, valor, quantidade from produtos')
     for produto in cursor:
