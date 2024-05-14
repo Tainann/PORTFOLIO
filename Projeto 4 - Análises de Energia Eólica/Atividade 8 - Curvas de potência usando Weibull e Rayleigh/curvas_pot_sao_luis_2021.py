@@ -127,7 +127,7 @@ def pot_Rayleigh(x_medios):
     return valores_potencia
 
 # Busca o arquivo com os dados
-dados = pd.read_excel('E:\\SMEE - 2024.1\\SAO_LUIS_2021.xlsx', decimal=',')
+dados = pd.read_excel('SAO_LUIS_2021.xlsx', decimal=',')
 dados_sem_null = dados['VENTO, VELOCIDADE HORARIA (m/s)'].dropna()
 
 dados_sem_null_sem_0, limites_bins, media_dados_sem_null = leitura_dados(dados_sem_null) 

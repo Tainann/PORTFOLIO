@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import os
 
 # Busca o arquivo com os dados
-dados = pd.read_excel('C:\\Users\\tdw07\\Downloads\\Tainan_04_03_SMEE_email.xlsm', sheet_name='AT4 - PARTE 3', decimal=',', skiprows=4)
+dados = pd.read_excel('04_03_SMEE_email.xlsm', sheet_name='AT4 - PARTE 3', decimal=',', skiprows=4)
 y1 = dados['Média de ws_25'].dropna()
 y2 = dados['Média de ws_50'].dropna()
 x = dados['Hora']

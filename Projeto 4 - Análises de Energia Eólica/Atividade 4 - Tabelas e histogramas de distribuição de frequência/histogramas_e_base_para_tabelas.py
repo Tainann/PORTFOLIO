@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import os
 
 # Busca o arquivo com os dados
-dados = pd.read_excel('C:\\Users\\tdw07\\Downloads\\Tainan_04_03_SMEE_email.xlsm', sheet_name='AT5 - COPIA', decimal=',')
+dados = pd.read_excel('04_03_SMEE_email.xlsm', sheet_name='AT5 - COPIA', decimal=',')
 dados_sem_null_25 = dados['ws_25'].dropna()
 dados_sem_null_50 = dados['ws_50'].dropna()
 
@@ -53,42 +53,7 @@ diretorio_atual = os.path.dirname(os.path.abspath(__file__))
 # Salvando o DataFrame como um arquivo CSV na mesma pasta do script
 caminho_arquivo = os.path.join(diretorio_atual, 'df_25.csv')
 df_25.to_csv(caminho_arquivo, index=False)
-'''
-plt.figure(figsize=(7, 3.5))
-plt.title('Tabela 1: Distribuição de frequência para 25m de altura')
 
-table = plt.table(cellText=df_25.values,
-                  colLabels=df_25.columns,
-                  cellLoc='center',
-                  loc='center',
-                  colWidths=[0.2, 0.2, 0.2,0.2])
-
-# Estilo das linhas listradas
-colors = ['lightgray', 'white']
-for i in range(len(df_25)):
-    for column_name in df_25.columns:
-        j = df_25.columns.get_loc(column_name)  # Obtém o índice da coluna
-        table._cells[(i + 1, j)].set_facecolor(colors[i % len(colors)])
-
-# Mudar a cor do cabeçalho
-table.auto_set_font_size(False)
-table.set_fontsize(12)
-table.scale(1.2, 1.2)  # Aumentar o tamanho da tabela
-table.auto_set_column_width([0, 1, 2, 3])  # Ajustar automaticamente a largura das colunas
-
-header_cells = table.get_celld()
-for i in range(len(df_25.columns)):
-    header_cells[(0, i)].set_facecolor('#58FF7A')  # Definir cor de fundo do cabeçalho
-
-plt.axis('off')  # Desligar as bordas do gráfico
-plt.tight_layout()
-
-nome_arquivo = 'TABELA_25.png'
-caminho = os.path.join(os.path.dirname(__file__), nome_arquivo)
-plt.savefig(caminho)
-
-plt.show()
-'''
 
 ######################################################################
 
@@ -130,40 +95,3 @@ diretorio_atual = os.path.dirname(os.path.abspath(__file__))
 # Salvando o DataFrame como um arquivo CSV na mesma pasta do script
 caminho_arquivo = os.path.join(diretorio_atual, 'df_50.csv')
 df_50.to_csv(caminho_arquivo, index=False)
-'''
-plt.figure(figsize=(7.5, 4))
-plt.title('Tabela 2: Distribuição de frequência para 50m de altura')
-
-table = plt.table(cellText=df_50.values,
-                  colLabels=df_50.columns,
-                  cellLoc='center',
-                  loc='center',
-                  colWidths=[0.2, 0.2, 0.2,0.2])
-
-# Estilo das linhas listradas
-colors = ['lightgray', 'white']
-for i in range(len(df_50)):
-    for column_name in df_50.columns:
-        j = df_50.columns.get_loc(column_name)  # Obtém o índice da coluna
-        table._cells[(i + 1, j)].set_facecolor(colors[i % len(colors)])
-
-# Mudar a cor do cabeçalho
-table.auto_set_font_size(False)
-table.set_fontsize(12)
-table.scale(1.2, 1.2)  # Aumentar o tamanho da tabela
-table.auto_set_column_width([0, 1, 2, 3])  # Ajustar automaticamente a largura das colunas
-
-header_cells = table.get_celld()
-for i in range(len(df_50.columns)):
-    header_cells[(0, i)].set_facecolor('#58FF7A')  # Definir cor de fundo do cabeçalho
-
-plt.axis('off')  # Desligar as bordas do gráfico
-plt.tight_layout()
-
-nome_arquivo = 'TABELA_50.png'
-caminho = os.path.join(os.path.dirname(__file__), nome_arquivo)
-plt.savefig(caminho)
-
-plt.show()
-######################################################################
-'''

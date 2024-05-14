@@ -28,7 +28,7 @@ def rugosidade(v1, v2, h1, h2):
     return rugs
 
 # Busca o arquivo com os dados
-dados = pd.read_excel('E:\\DOWNLOADS_DISCO_C\\ATIVIDADE_4.xlsx', sheet_name='UNIAO', decimal=',')
+dados = pd.read_excel('ATIVIDADE_4.xlsx', sheet_name='UNIAO', decimal=',')
 
 # Agrupar por ano e nome do mês e calcular a média
 dados = dados[['Mês', 'ws_25', 'ws_50']]

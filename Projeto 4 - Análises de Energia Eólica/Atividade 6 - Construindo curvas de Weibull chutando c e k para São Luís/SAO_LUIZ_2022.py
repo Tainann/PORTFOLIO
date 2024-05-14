@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import os
 
 # Busca o arquivo com os dados
-dados = pd.read_excel('E:\\SMEE - 2024.1\\SAO_LUIS_2022.xlsx')
+dados = pd.read_excel('SAO_LUIS_2022.xlsx')
 
 # Função da curva de Weibull
 def weibull(x, c, k):
