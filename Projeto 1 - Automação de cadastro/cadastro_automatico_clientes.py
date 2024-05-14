@@ -36,7 +36,7 @@ time.sleep(3)
 # Passo 3: Importar a base de produtos pra cadastrar
 import pandas as pd
 
-tabela = pd.read_csv("E:\\python\\nv\\python_basico.py\\JORNADA PYTHON\\AULA 1 - AUTOMAÇÃO\\produtos.csv")
+tabela = pd.read_csv("produtos.csv")
 
 print(tabela)
 
