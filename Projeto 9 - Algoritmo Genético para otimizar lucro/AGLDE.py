@@ -1,16 +1,14 @@
-# ESSE CÓDIGO É O MESMO DO ARQUIVO "alg_genetico.ipynb" SÓ QUE ESCRITO COM 
-# PROGRAMAÇÃO ORIENTADA À OBJETOS
 
-# IMPORTANTE:
-  # Se está dentro da classe, para chamar alguma função usar: self.nome_funcao(parametros)
-  # ''     ''           ''  , para chamar um atributo do objeto usar: self.atributo
-  
-  # Se está no corpo do código em si, usar: objeto.nome_funcao() ou objeto.atributo 
+#################
+# ESSE ARQUIVO É O ALGORITMO EM FORMA DE BIBLIOTECA QUE VOU USAR NOS CÓDIGOS DE OTIMIZAÇÃO DE LUCRO
+# AQUI populacao PASSOU A SER UM ATRIBUTO DA CLASSE PARA ASSIM SER CHAMADA NO MÉTODO obtemMelhorIndividuo
+################
+
+
 
 import random
 
-# Estruturar como classe permite maior flexibilidade do projeto
-# Várias instâncias podem ser analisadas ao mesmo tempo com atributos diferentes
+
 class AGLDE:
 
     # SELF INDICA QUE ALGO PERTENCE À CLASSE
@@ -118,11 +116,11 @@ class AGLDE:
     
     # Verifica dentro da população de cromossomos qual é o indivíduo que possui
     # a melhor nota de aptidão. Retorna o cromossomo com melhor aptidão.
-    def obtemMelhorIndividuo(self, populacao):
+    def obtemMelhorIndividuo(self):
         # Escolhe um cromossomo aleatório como o melhor
-        melhorIndividuo = self.fitness(populacao[random.randint(0, len(populacao) - 1)])
+        melhorIndividuo = self.fitness(self.populacao[random.randint(0, len(self.populacao) - 1)])
 
-        for i in populacao:
+        for i in self.populacao:
             individuo = self.fitness(i)
 
             if individuo[1] > melhorIndividuo[1]:
@@ -134,7 +132,7 @@ class AGLDE:
     def elitismo(self, populacao, telitismo):
         novaPopulacao = []
 
-        melhorindividuo = self.obtemMelhorIndividuo(populacao)
+        melhorindividuo = self.obtemMelhorIndividuo()
         numeroRepeticoes = int(len(populacao) * telitismo)
         
         for i in range(numeroRepeticoes):
@@ -174,37 +172,10 @@ class AGLDE:
 
     ### EXECUÇÃO DO ALGORITMO GENÉTICO
     def runAG(self, nGeracoes):
-        populacao = self.criaPopulacao(self.tPopulacao, self.qtdGenes) # Criando 10 cromossomos com 20 genes
+        self.populacao = self.criaPopulacao(self.tPopulacao, self.qtdGenes) # Criando 10 cromossomos com 20 genes
         for i in range(nGeracoes):
-            melhorIndividuo = self.obtemMelhorIndividuo(populacao) 
-            populacao = self.geraNovaPopulacao(populacao, self.tMutacao, self.tElitismo)
+            melhorIndividuo = self.obtemMelhorIndividuo() 
+            self.populacao = self.geraNovaPopulacao(self.populacao, self.tMutacao, self.tElitismo)
         
-        return melhorIndividuo # Retorna o melhor de todos
+        return melhorIndividuo
 
-
-def fitness1(cromossomo): # Conta quantidade de 1
-    qtdUns = 0
-    for g in cromossomo:
-        if g == "1":
-            qtdUns +=1
-
-    return [cromossomo, qtdUns]
-
-ag1 = AGLDE(10, 20, 0.05, 0.1)
-ag1.fitness = fitness1 # INSERINDO ESSA FUNÇÃO DENTRO DA CLASSE
-# ISSO PERMITE REUTILIZAR O CÓDIGO PARA VÁRIAS APLICAÇÕES
-print(ag1.runAG(100))
-
-
-
-def fitness2(cromossomo): # Conta quantidade de 0
-    qtdUns = 0
-    for g in cromossomo:
-        if g == "0":
-            qtdUns +=1
-
-    return [cromossomo, qtdUns]
-
-ag2 = AGLDE(40, 50, 0.05, 0.25)
-ag2.fitness = fitness2
-print(ag2.runAG(100))
