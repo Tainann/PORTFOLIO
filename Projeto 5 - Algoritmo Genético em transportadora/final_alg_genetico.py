@@ -89,7 +89,7 @@ class AlgoritmoGenetico():
         self.lista_solucoes = []
         
         # Abaixo são criados varios individuos (solucoes), e cada um deles
-        # é dotado de mutavao, crossover, avaliacao, cromossomo...
+        # é dotado de mutacao, crossover, avaliacao, cromossomo...
     def inicializa_populacao(self, espacos, valores, limite_espacos):
         for i in range(self.tamanho_populacao):
             self.populacao.append(Individuo(espacos, valores, limite_espacos))
