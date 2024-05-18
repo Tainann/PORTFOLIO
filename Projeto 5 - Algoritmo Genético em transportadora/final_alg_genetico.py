@@ -123,7 +123,7 @@ class AlgoritmoGenetico():
         valor_sorteado = random() * soma_avaliacao # Simula a roleta sendo girada
         soma = 0
         i = 0
-        # Os inviduos menos aptos tem nota 1, então dificilmente serão escolhidos na roleta
+        # Os individuos menos aptos tem nota 1, então dificilmente serão escolhidos na roleta
         while i < len(self.populacao) and soma < valor_sorteado:
             soma += self.populacao[i].nota_avaliacao
             pai += 1
@@ -161,7 +161,7 @@ class AlgoritmoGenetico():
             for individuos_gerados in range(0, self.tamanho_populacao, 2):
                 # A parte mais importante é a roleta
                 # A roleta irá aumentar a eficiencia da solucao por escolher mais
-                # Os individuos mais aptos
+                # os individuos mais aptos
                 pai1 = self.seleciona_pai(soma_avaliacao)
                 pai2 = self.seleciona_pai(soma_avaliacao)
                 
