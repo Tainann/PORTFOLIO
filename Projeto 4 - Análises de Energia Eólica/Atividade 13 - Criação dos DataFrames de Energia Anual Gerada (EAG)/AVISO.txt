@@ -1,1 +1,0 @@
-Esses códigos criam os DataFrames, mas as tabelas em si usei o Latex para deixar bonito no PDF do relatório da cadeira

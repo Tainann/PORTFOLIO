@@ -1,0 +1,1 @@
+- ⚠️❗ Outras atividades foram desenvolvidas, mas para evitar mau uso em trabalhos acadêmicos, elas não podem ser mais acessadas.
