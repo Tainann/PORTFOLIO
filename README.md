@@ -2,5 +2,5 @@
 <h3 align="center">Espero que goste do meu trabalho...</h3>
 
 
-- 📚 Os projetos que desenvolvi são de cursos que fiz na internet e de atividades ao longo da minha graduação.
+- 📚 Os projetos que desenvolvi são de cursos que fiz na internet e de atividades na universidade.
 - ⚠️❗ Leia o arquivo LICENSE.md na pasta license para evitar problemas com a reprodução dos meus códigos.
